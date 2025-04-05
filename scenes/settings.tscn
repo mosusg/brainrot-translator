@@ -22,20 +22,26 @@ layout_mode = 2
 theme_override_constants/separation = 200
 
 [node name="Option 1" type="Button" parent="CenterContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(1920, 100)
+custom_minimum_size = Vector2(920, 100)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 100
 text = "1"
 
 [node name="Option 2" type="Button" parent="CenterContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(1920, 100)
+custom_minimum_size = Vector2(920, 100)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 100
 text = "2"
 
 [node name="Main Menu(settings)" type="Button" parent="CenterContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(1920, 100)
+custom_minimum_size = Vector2(920, 100)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 100
 text = "Main Menu"
 
