@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://4wv5kf7jysck"]
+
+[ext_resource type="Script" uid="uid://de8udnlghhcpx" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_top = 100.0
+offset_right = 1920.0
+offset_bottom = 935.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1920, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Start"
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Settings"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
