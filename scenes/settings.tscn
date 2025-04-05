@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://gkjakdl6uqym"]
+[gd_scene load_steps=2 format=3 uid="uid://gkjakdl6uqym"]
+
+[ext_resource type="Script" uid="uid://cy25lhijhedel" path="res://scenes/settings.gd" id="1_5p8wc"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -7,17 +9,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5p8wc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 100.0
+offset_right = 1920.0
+offset_bottom = 935.0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
+theme_override_constants/separation = 200
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Option 1" type="Button" parent="CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(1920, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "1"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Option 2" type="Button" parent="CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(1920, 100)
 layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "2"
+
+[node name="Main Menu(settings)" type="Button" parent="CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(1920, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Main Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Main Menu(settings)" to="." method="_on_main_menusettings_pressed"]
