@@ -80,3 +80,7 @@ theme_override_styles/hover = ExtResource("2_6wm04")
 theme_override_styles/pressed = ExtResource("2_r6d6q")
 theme_override_styles/normal = ExtResource("2_6wm04")
 text = "1"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 3" to="." method="_on_option_3_pressed"]
