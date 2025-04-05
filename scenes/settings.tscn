@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://gkjakdl6uqym"]
+[gd_scene load_steps=4 format=3 uid="uid://gkjakdl6uqym"]
 
-[ext_resource type="Script" uid="uid://cy25lhijhedel" path="res://scenes/settings.gd" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://cy25lhijhedel" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_6wm04"]
+[ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="2_r6d6q"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -10,6 +12,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5p8wc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.0980392, 0.392157, 0.494118, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -26,7 +35,16 @@ custom_minimum_size = Vector2(920, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("2_6wm04")
+theme_override_styles/hover = ExtResource("2_6wm04")
+theme_override_styles/pressed = ExtResource("2_r6d6q")
+theme_override_styles/normal = ExtResource("2_6wm04")
 text = "1"
 
 [node name="Option 2" type="Button" parent="CenterContainer/VBoxContainer2"]
@@ -34,17 +52,31 @@ custom_minimum_size = Vector2(920, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_font_sizes/font_size = 100
-text = "2"
+theme_override_styles/focus = ExtResource("2_6wm04")
+theme_override_styles/hover = ExtResource("2_6wm04")
+theme_override_styles/pressed = ExtResource("2_r6d6q")
+theme_override_styles/normal = ExtResource("2_6wm04")
+text = "1"
 
-[node name="Main Menu(settings)" type="Button" parent="CenterContainer/VBoxContainer2"]
+[node name="Option 3" type="Button" parent="CenterContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(920, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_font_sizes/font_size = 100
-text = "Main Menu"
-
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 2" to="." method="_on_option_2_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/Main Menu(settings)" to="." method="_on_main_menusettings_pressed"]
+theme_override_styles/focus = ExtResource("2_6wm04")
+theme_override_styles/hover = ExtResource("2_6wm04")
+theme_override_styles/pressed = ExtResource("2_r6d6q")
+theme_override_styles/normal = ExtResource("2_6wm04")
+text = "1"
