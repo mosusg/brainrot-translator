@@ -1,14 +1,10 @@
 shader_type canvas_item;
 
+uniform float scroll_speed = 0.05;
+uniform float direction_change_speed = 0.5;
+
 void vertex() {
-	// Called for every vertex the material is visible on.
+    float angle = sin(TIME * direction_change_speed) * 3.14159;
+    vec2 direction = vec2(cos(angle), sin(angle));
+    UV += direction * scroll_speed * TIME;
 }
-
-void fragment() {
-	// Called for every pixel the material is visible on.
-}
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}

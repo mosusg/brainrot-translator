@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj37f57bgy0it"
-path="res://.godot/imported/scroll test.png-e1720030a1b80943544480fe069dbed9.ctex"
+uid="uid://12flds17r3h2"
+path="res://.godot/imported/betterbulb.png-a7d84fb372b40064506d3a6d49cdf974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scroll test.png"
-dest_files=["res://.godot/imported/scroll test.png-e1720030a1b80943544480fe069dbed9.ctex"]
+source_file="res://assets/betterbulb.png"
+dest_files=["res://.godot/imported/betterbulb.png-a7d84fb372b40064506d3a6d49cdf974.ctex"]
 
 [params]
 

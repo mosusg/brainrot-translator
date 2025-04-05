@@ -18,7 +18,7 @@ custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0.0532808, 0.262591, 0.335082, 1)
+color = Color(0.215686, 0.223529, 0.180392, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
