@@ -1,13 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://4wv5kf7jysck"]
 
 [ext_resource type="Script" uid="uid://de8udnlghhcpx" path="res://scripts/menu.gd" id="1_yqeox"]
-[ext_resource type="Shader" uid="uid://cyoq1wi4hfrgt" path="res://scenes/menuscroll.gdshader" id="2_4ytvr"]
+[ext_resource type="Shader" uid="uid://cyoq1wi4hfrgt" path="res://scripts/menuscroll.gdshader" id="2_4ytvr"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="3_g3eks"]
 [ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="3_mhnvy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
 shader = ExtResource("2_4ytvr")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/direction_change_speed = 0.5
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
