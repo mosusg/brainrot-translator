@@ -74,3 +74,7 @@ func chooseWords():
 
 	# Update the question text
 	questionText.set_text("What is the meaning of '" + correctAnswer + "'?")
+
+
+func _on_back_pressed():
+		get_tree().change_scene_to_file("res://scenes/app.tscn")

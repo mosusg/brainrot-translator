@@ -55,3 +55,6 @@ func _on_flip_button_2_pressed() -> void:
 		var definition = infoLord.words[current_word2]["DEFINITION"]
 		card_label2.set_text(definition)
 		showing_definition2 = true
+		
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/app.tscn")
