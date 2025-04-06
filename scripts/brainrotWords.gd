@@ -440,5 +440,20 @@ var words = {
 		"PART_OF_SPEECH" : "Verb",
 		"RELEVANCE" : 9, # Scale of 1-10 of how relevant the word is
 		"Example" : "Dude, I’m so geeked on this history test"
+	},
+	"Tralalero Tralala" : {
+		"DEFINITION" : "a meme featuring a catchy, nonsensical shark with nikes to express joy, silliness, or absurdity, often in humorous contexts.",
+		"SYNONYM" : "Ecstatic",
+		"PART_OF_SPEECH" : "",
+		"RELEVANCE" : 9, # Scale of 1-10 of how relevant the word is
+		"Example" : ""
+	},
+	"Trapotrop" : {
+		"DEFINITION" : "a meme featuring a catchy, nonsensical shrimp cat expressing joy, silliness, or absurdity, often in humorous contexts.",
+		"SYNONYM" : "Ecstatic",
+		"PART_OF_SPEECH" : "",
+		"RELEVANCE" : 9, # Scale of 1-10 of how relevant the word is
+		"Example" : ""
 	}
+	
 }
