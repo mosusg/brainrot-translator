@@ -1,6 +1,9 @@
 extends Node
 
 var globalQuizDif = 1
+var easyQuizHS = 0
+var mediumQuizHS = 0
+var hardQuizHS = 0
 
 var words = {
 	"Aura" : {
@@ -18,9 +21,9 @@ var words = {
 		"Example" : "The teacher at my school has W Rizz!"
 	},
 	"You know what else is massive?" : {
-		"DEFINITION" : "A comedic joke that refers to the low taper fade. This joke was started by Ninja dragging the low taper fade meme",
+		"DEFINITION" : "A comedic joke that refers to the overuse of the Low Taper Fade meme",
 		"SYNONYM" : "N/A",
-		"PART_OF_SPEECH" : "Sentence",
+		"PART_OF_SPEECH" : "Phrase",
 		"RELEVANCE" : 8, # Scale of 1-10 of how relevant the word is
 		"Example" : "You know what else is massive? The lowwwww taper fade"
 	},
@@ -34,7 +37,7 @@ var words = {
 	"D1" : {
 		"DEFINITION" : "Reference to Division 1 in sports, when used in brainrot context its to define superiority or skill in that field of knowledge.",
 		"SYNONYM" : "Superior",
-		"PART_OF_SPEECH" : "Part of speech here",
+		"PART_OF_SPEECH" : "Adjective",
 		"RELEVANCE" : 5, # Scale of 1-10 of how relevant the word is
 		"Example" : "We have a D1 glazer at hand."
 	},
@@ -193,9 +196,9 @@ var words = {
 		"Example" : "Can you hand me that? Good boy!"
 	},
 	"Low Taper Fade" : {
-		"DEFINITION" : "Definition goes here",
-		"SYNONYM" : "Synonym or similar word here",
-		"PART_OF_SPEECH" : "Part of speech here",
+		"DEFINITION" : "A style of haircut popularized by the streamer Ninja's meme by the same name",
+		"SYNONYM" : "Hair",
+		"PART_OF_SPEECH" : "Noun",
 		"RELEVANCE" : 7, # Scale of 1-10 of how relevant the word is
 		"Example" : "Imagine if Brian got a low taper fade!"
 	},
@@ -230,7 +233,7 @@ var words = {
 	"I Understand it Now" : {
 		"DEFINITION" : "A sudden realization or clarity for the task at hand which usually implies an eventual successful job done",
 		"SYNONYM" : "Enlightenment",
-		"PART_OF_SPEECH" : "Part of speech here",
+		"PART_OF_SPEECH" : "Sentence",
 		"RELEVANCE" : 7, # Scale of 1-10 of how relevant the word is
 		"Example" : "He understood it now after he turned in his math test."
 	},
@@ -242,7 +245,7 @@ var words = {
 		"Example" : "Shawty went to the royal ball and got rizzed"
 	},
 	"Griddy" : {
-		"DEFINITION" : "To griddy is to perform a dance move popularized by the game Fortnite",
+		"DEFINITION" : "To perform a dance move popularized by the game Fortnite",
 		"SYNONYM" : "Bring it Around",
 		"PART_OF_SPEECH" : "Verb",
 		"RELEVANCE" : 3, # Scale of 1-10 of how relevant the word is
