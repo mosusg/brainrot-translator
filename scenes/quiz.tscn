@@ -30,6 +30,7 @@ color = Color(0.156863, 0.686275, 0.690196, 1)
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_3bubg")
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_2fkxq")

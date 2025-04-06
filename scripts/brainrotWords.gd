@@ -3,7 +3,6 @@ extends Node
 var globalQuizDif = 1
 var easyQuizHS = 0
 var mediumQuizHS = 0
-var hardQuizHS = 0
 
 var words = {
 	"Aura" : {

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://85rcmbi1y45p"]
+
+[ext_resource type="PackedScene" uid="uid://voyac3omx002" path="res://scenes/hand.tscn" id="2_mnyll"]
+
+[node name="DeckHand" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hand" parent="CanvasLayer" instance=ExtResource("2_mnyll")]
+position = Vector2(960, 4100)
+
+[node name="CardTest" type="Button" parent="."]
+offset_right = 64.0
+offset_bottom = 16.0
+scale = Vector2(3, 3)
+text = "Attack"
+
+[node name="CardTest2" type="Button" parent="."]
+offset_top = 93.0
+offset_right = 65.0
+offset_bottom = 124.0
+scale = Vector2(3, 3)
+text = "Defend"
+
+[connection signal="pressed" from="CardTest" to="." method="_on_card_test_pressed"]
+[connection signal="pressed" from="CardTest2" to="." method="_on_card_test_2_pressed"]
