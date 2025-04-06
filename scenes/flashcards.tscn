@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://cropynumy8uc8"]
+
+[ext_resource type="Shader" uid="uid://4shutw5u745f" path="res://scripts/better shader.gdshader" id="1_0bfc5"]
+[ext_resource type="Script" uid="uid://8du6thlbs2xf" path="res://scripts/flashcards.gd" id="1_ax380"]
+[ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="2_c4mx6"]
+[ext_resource type="Script" uid="uid://ckvpvsfppuvl7" path="res://scripts/brainrotWords.gd" id="2_obe7n"]
+[ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="4_obe7n"]
+[ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="5_w4v7f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yosun"]
+shader = ExtResource("1_0bfc5")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/direction_change_speed = 0.5
+
+[node name="Flashcards" type="Node2D"]
+script = ExtResource("1_ax380")
+
+[node name="infoLord" type="Node2D" parent="."]
+script = ExtResource("2_obe7n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.529274, 0.00141726, 0.707644, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yosun")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_c4mx6")
+
+[node name="Card" type="Node2D" parent="."]
+
+[node name="flip_button" type="Button" parent="Card"]
+custom_minimum_size = Vector2(890, 100)
+offset_left = 62.0
+offset_top = 74.0
+offset_right = 952.0
+offset_bottom = 1070.0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(445, 157.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_obe7n")
+theme_override_styles/hover = ExtResource("4_obe7n")
+theme_override_styles/pressed = ExtResource("5_w4v7f")
+theme_override_styles/normal = ExtResource("4_obe7n")
+text = "Test"
+autowrap_mode = 3
+
+[node name="Card2" type="Node2D" parent="."]
+
+[node name="flip_button2" type="Button" parent="Card2"]
+custom_minimum_size = Vector2(890, 100)
+offset_left = 1020.0
+offset_top = 74.0
+offset_right = 1910.0
+offset_bottom = 1070.0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(445, 157.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_obe7n")
+theme_override_styles/hover = ExtResource("4_obe7n")
+theme_override_styles/pressed = ExtResource("5_w4v7f")
+theme_override_styles/normal = ExtResource("4_obe7n")
+text = "Test"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Card/flip_button" to="." method="_on_flip_button_pressed"]
+[connection signal="pressed" from="Card2/flip_button2" to="." method="_on_flip_button_2_pressed"]

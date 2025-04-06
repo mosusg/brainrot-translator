@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bitiori8cp8q5"]
 
 [ext_resource type="Script" uid="uid://ckvpvsfppuvl7" path="res://scripts/brainrotWords.gd" id="1_2fkxq"]
-[ext_resource type="Script" uid="uid://crdlcarbccmmv" path="res://scenes/quiz.gd" id="1_3bubg"]
+[ext_resource type="Script" uid="uid://crdlcarbccmmv" path="res://scripts/quiz.gd" id="1_3bubg"]
 [ext_resource type="Shader" uid="uid://cdwkbqpuaoqge" path="res://scenes/better shader.gdshader" id="1_jng0p"]
 [ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="2_2fkxq"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="5_m81w7"]
