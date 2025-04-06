@@ -1,29 +1,24 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcdbllf7gue2u"]
 
-[ext_resource type="PackedScene" uid="uid://bes4hhe47cbc8" path="res://scenes/Card.tscn" id="1_27d25"]
+[ext_resource type="Script" uid="uid://mw5sfoaiyqg4" path="res://deck_hand.gd" id="1_27d25"]
 
 [node name="DeckHand" type="Node2D"]
+script = ExtResource("1_27d25")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Card" parent="CanvasLayer" instance=ExtResource("1_27d25")]
-position = Vector2(228, 310)
-CardName = "1"
-CardDesc = "a"
-
-[node name="Card2" parent="CanvasLayer" instance=ExtResource("1_27d25")]
-position = Vector2(595, 301)
-CardName = "2"
-CardDesc = "b"
-CardCost = 2
-
-[node name="Card3" parent="CanvasLayer" instance=ExtResource("1_27d25")]
-position = Vector2(967, 297)
-CardName = "3"
-CardDesc = "c"
-CardCost = 3
+[node name="spawn" type="Node2D" parent="CanvasLayer"]
+position = Vector2(731, 553)
 
 [node name="CardTest" type="Button" parent="."]
 offset_right = 64.0
 offset_bottom = 16.0
 scale = Vector2(5, 5)
+
+[node name="CardTest2" type="Button" parent="."]
+offset_top = 80.0
+offset_right = 64.0
+offset_bottom = 96.0
+scale = Vector2(5, 5)
+
+[connection signal="pressed" from="CardTest" to="." method="_on_card_test_pressed"]
