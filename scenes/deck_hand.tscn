@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcdbllf7gue2u"]
 
-[ext_resource type="Script" uid="uid://mw5sfoaiyqg4" path="res://deck_hand.gd" id="1_27d25"]
+[ext_resource type="Script" uid="uid://mw5sfoaiyqg4" path="res://scripts/deck_hand.gd" id="1_27d25"]
 [ext_resource type="PackedScene" uid="uid://voyac3omx002" path="res://scenes/hand.tscn" id="2_mnyll"]
 
 [node name="DeckHand" type="Node2D"]
@@ -10,7 +10,6 @@ script = ExtResource("1_27d25")
 
 [node name="Hand" parent="CanvasLayer" instance=ExtResource("2_mnyll")]
 position = Vector2(960, 4100)
-max_card_spread_angle = 5.0
 
 [node name="CardTest" type="Button" parent="."]
 offset_right = 64.0

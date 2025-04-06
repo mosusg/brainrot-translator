@@ -18,6 +18,13 @@ func add_card(card: Node2D):
 	add_child(card)
 	reposition_cards()
 
+func remove_card(index: int) -> Node2D:
+	var removing_card = hand[index]
+	hand.remove_at(index)
+	remove_child(removing_card)
+	reposition_cards()
+	return removing_card
+
 
 func reposition_cards():
 	var card_spread = min(angle_limit / hand.size(), max_card_spread_angle)
