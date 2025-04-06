@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci3kuy477jdpm"]
+
+[ext_resource type="PackedScene" uid="uid://bes4hhe47cbc8" path="res://scenes/Card.tscn" id="1_bcw36"]
+[ext_resource type="Texture2D" uid="uid://b80asm3mqli1e" path="res://assets/defend_card_image.png" id="2_2es6e"]
+
+[node name="AuraCard" type="Node2D"]
+
+[node name="Card" parent="." node_paths=PackedStringArray("card_image") instance=ExtResource("1_bcw36")]
+card_name = "Aura"
+card_desc = "Gain 2 aura"
+card_image = NodePath("../Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -62)
+scale = Vector2(4, 4)
+texture = ExtResource("2_2es6e")

@@ -1,28 +1,109 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcdbllf7gue2u"]
+[gd_scene load_steps=8 format=3 uid="uid://bcdbllf7gue2u"]
 
 [ext_resource type="Script" uid="uid://mw5sfoaiyqg4" path="res://scripts/deck_hand.gd" id="1_27d25"]
 [ext_resource type="PackedScene" uid="uid://voyac3omx002" path="res://scenes/hand.tscn" id="2_mnyll"]
+[ext_resource type="Shader" uid="uid://4shutw5u745f" path="res://scripts/better shader.gdshader" id="2_s1lvx"]
+[ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="3_03le4"]
+[ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="5_npc56"]
+[ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="6_lq05f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_npc56"]
+shader = ExtResource("2_s1lvx")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/direction_change_speed = 0.5
 
 [node name="DeckHand" type="Node2D"]
 script = ExtResource("1_27d25")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0980392, 0.392157, 0.494118, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_npc56")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_03le4")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hand" parent="CanvasLayer" instance=ExtResource("2_mnyll")]
-position = Vector2(960, 4100)
+position = Vector2(960, 4000)
 
-[node name="CardTest" type="Button" parent="."]
-offset_right = 64.0
-offset_bottom = 16.0
-scale = Vector2(3, 3)
-text = "Attack"
+[node name="Rizz" type="Button" parent="CanvasLayer"]
+offset_right = 300.0
+offset_bottom = 157.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("5_npc56")
+theme_override_styles/hover = ExtResource("5_npc56")
+theme_override_styles/pressed = ExtResource("6_lq05f")
+theme_override_styles/normal = ExtResource("5_npc56")
+text = "Rizz"
 
-[node name="CardTest2" type="Button" parent="."]
-offset_top = 93.0
-offset_right = 65.0
-offset_bottom = 124.0
-scale = Vector2(3, 3)
-text = "Defend"
+[node name="Mog" type="Button" parent="CanvasLayer"]
+offset_top = 205.0
+offset_right = 300.0
+offset_bottom = 362.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("5_npc56")
+theme_override_styles/hover = ExtResource("5_npc56")
+theme_override_styles/pressed = ExtResource("6_lq05f")
+theme_override_styles/normal = ExtResource("5_npc56")
+text = "Mog"
 
-[connection signal="pressed" from="CardTest" to="." method="_on_card_test_pressed"]
-[connection signal="pressed" from="CardTest2" to="." method="_on_card_test_2_pressed"]
+[node name="Aura" type="Button" parent="CanvasLayer"]
+offset_top = 405.0
+offset_right = 300.0
+offset_bottom = 562.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("5_npc56")
+theme_override_styles/hover = ExtResource("5_npc56")
+theme_override_styles/pressed = ExtResource("6_lq05f")
+theme_override_styles/normal = ExtResource("5_npc56")
+text = "Aura"
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 1613.0
+offset_right = 1913.0
+offset_bottom = 157.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("5_npc56")
+theme_override_styles/hover = ExtResource("5_npc56")
+theme_override_styles/pressed = ExtResource("6_lq05f")
+theme_override_styles/normal = ExtResource("5_npc56")
+text = "Exit"
+
+[connection signal="pressed" from="CanvasLayer/Rizz" to="." method="_on_rizz_pressed"]
+[connection signal="pressed" from="CanvasLayer/Mog" to="." method="_on_mog_pressed"]
+[connection signal="pressed" from="CanvasLayer/Aura" to="." method="_on_aura_pressed"]
