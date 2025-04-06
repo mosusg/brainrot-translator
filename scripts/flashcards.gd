@@ -42,18 +42,22 @@ func _ready():
 func _on_flip_button_pressed() -> void:
 	if showing_definition1:
 		_show_random_word1()  # Show random word when clicked again
+		card_label1.modulate = Color(1, 1, 1, 1)  # Adjust color directly
 	else:
 		var definition = infoLord.words[current_word1]["DEFINITION"]
 		card_label1.set_text(definition)  # Show definition
+		card_label1.modulate = Color(.85, .95, .95, 1)  # Adjust color directly
 		showing_definition1 = true
 
 
 func _on_flip_button_2_pressed() -> void:
 	if showing_definition2:
 		_show_random_word2()  # Show random word when clicked again
+		card_label2.modulate = Color(1, 1, 1, 1)  # Adjust color directly
 	else:
 		var definition = infoLord.words[current_word2]["DEFINITION"]
 		card_label2.set_text(definition)
+		card_label2.modulate = Color(.85, .95, .95, 1)  # Adjust color directly
 		showing_definition2 = true
 		
 func _on_back_pressed() -> void:
