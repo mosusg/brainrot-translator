@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4f6hwfoh4cqo"]
+[gd_scene load_steps=5 format=3 uid="uid://j173tu85hwao"]
 
 [ext_resource type="Script" uid="uid://cy25lhijhedel" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_6wm04"]
 [ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="2_r6d6q"]
+[ext_resource type="Texture2D" uid="uid://dejloa5cgcuqf" path="res://scenes/images.jpg" id="4_f4mfi"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -45,7 +46,7 @@ theme_override_styles/focus = ExtResource("2_6wm04")
 theme_override_styles/hover = ExtResource("2_6wm04")
 theme_override_styles/pressed = ExtResource("2_r6d6q")
 theme_override_styles/normal = ExtResource("2_6wm04")
-text = "1"
+text = "Don't Press"
 
 [node name="Option 2" type="Button" parent="CenterContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(920, 100)
@@ -62,7 +63,7 @@ theme_override_styles/focus = ExtResource("2_6wm04")
 theme_override_styles/hover = ExtResource("2_6wm04")
 theme_override_styles/pressed = ExtResource("2_r6d6q")
 theme_override_styles/normal = ExtResource("2_6wm04")
-text = "1"
+text = "Volume(wip)"
 
 [node name="Option 3" type="Button" parent="CenterContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(920, 100)
@@ -81,6 +82,16 @@ theme_override_styles/pressed = ExtResource("2_r6d6q")
 theme_override_styles/normal = ExtResource("2_6wm04")
 text = "Main Menu"
 
+[node name="no" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 542.5)
+scale = Vector2(11.2941, 3.63176)
+texture = ExtResource("4_f4mfi")
+
+[node name="Timer" type="Timer" parent="no"]
+one_shot = true
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 3" to="." method="_on_option_3_pressed"]
+[connection signal="timeout" from="no/Timer" to="." method="_on_timer_timeout"]
