@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bitiori8cp8q5"]
 
 [ext_resource type="Script" uid="uid://ckvpvsfppuvl7" path="res://scripts/brainrotWords.gd" id="1_2fkxq"]
-[ext_resource type="Script" uid="uid://crdlcarbccmmv" path="res://scenes/quiz.gd" id="1_3bubg"]
 [ext_resource type="Shader" uid="uid://cdwkbqpuaoqge" path="res://scenes/better shader.gdshader" id="1_jng0p"]
+[ext_resource type="Script" uid="uid://crdlcarbccmmv" path="res://scripts/quiz.gd" id="1_m81w7"]
 [ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="2_2fkxq"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="5_m81w7"]
 [ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="6_xq7j8"]
@@ -16,7 +16,7 @@ shader_parameter/direction_change_speed = 0.5
 font_size = 100
 
 [node name="Quiz" type="Node2D"]
-script = ExtResource("1_3bubg")
+script = ExtResource("1_m81w7")
 
 [node name="infoLord" type="Node2D" parent="."]
 script = ExtResource("1_2fkxq")
@@ -27,14 +27,16 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.156863, 0.686275, 0.690196, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_3bubg")
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_2fkxq")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="Game" type="Node2D" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="Game"]
 modulate = Color(1, 0, 0, 0.556863)
 self_modulate = Color(1, 1, 1, 0.705882)
 custom_minimum_size = Vector2(1920, 300)
@@ -44,7 +46,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 color = Color(0, 0, 0, 1)
 
-[node name="questionBlud" type="Label" parent="."]
+[node name="questionBlud" type="Label" parent="Game"]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 1700.0
@@ -54,7 +56,7 @@ label_settings = SubResource("LabelSettings_2fkxq")
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="scoreBlud" type="Label" parent="."]
+[node name="scoreBlud" type="Label" parent="Game"]
 offset_left = 1689.0
 offset_top = 197.0
 offset_right = 1997.0
@@ -66,7 +68,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Option 4" type="Button" parent="."]
+[node name="Option 4" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
 offset_left = 50.0
 offset_top = 350.0
@@ -90,7 +92,7 @@ text = "Test"
 autowrap_mode = 3
 clip_text = true
 
-[node name="Option 3" type="Button" parent="."]
+[node name="Option 3" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
 offset_left = 50.0
 offset_top = 715.0
@@ -113,7 +115,7 @@ theme_override_styles/normal = ExtResource("5_m81w7")
 text = "Test"
 autowrap_mode = 3
 
-[node name="Option 2" type="Button" parent="."]
+[node name="Option 2" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
 offset_left = 980.0
 offset_top = 350.0
@@ -136,7 +138,7 @@ theme_override_styles/normal = ExtResource("5_m81w7")
 text = "Test"
 autowrap_mode = 3
 
-[node name="Option 1" type="Button" parent="."]
+[node name="Option 1" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
 offset_left = 980.0
 offset_top = 715.0
@@ -159,7 +161,7 @@ theme_override_styles/normal = ExtResource("5_m81w7")
 text = "Test"
 autowrap_mode = 3
 
-[connection signal="pressed" from="Option 4" to="." method="_on_option_4_pressed"]
-[connection signal="pressed" from="Option 3" to="." method="_on_option_3_pressed"]
-[connection signal="pressed" from="Option 2" to="." method="_on_option_2_pressed"]
-[connection signal="pressed" from="Option 1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Game/Option 4" to="." method="_on_option_4_pressed"]
+[connection signal="pressed" from="Game/Option 3" to="." method="_on_option_3_pressed"]
+[connection signal="pressed" from="Game/Option 2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="Game/Option 1" to="." method="_on_option_1_pressed"]
