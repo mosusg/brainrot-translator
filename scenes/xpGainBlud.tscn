@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsyvy22nvq5wi"]
+[gd_scene load_steps=9 format=3 uid="uid://bsyvy22nvq5wi"]
 
 [ext_resource type="Script" uid="uid://b15ekg8o27blw" path="res://scenes/xp_gain_blud.gd" id="1_1f2d6"]
 [ext_resource type="Texture2D" uid="uid://cc0a34vdgb3wn" path="res://assets/skull.png" id="1_q0kf8"]
@@ -10,7 +10,7 @@
 resource_local_to_scene = true
 shader = ExtResource("4_pgcct")
 shader_parameter/blur_radius = 13
-shader_parameter/blur_strength = 6.42
+shader_parameter/blur_strength = 9.099
 shader_parameter/overlay_alpha = 0.886
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ti5c5"]
@@ -40,6 +40,10 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_1f2d6"]
+font_size = 60
+font_color = Color(1, 1, 0, 1)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -59,11 +63,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.431373)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(960, 270)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_ti5c5")
-animation = &"locked"
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.341176)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -79,3 +86,27 @@ offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 91
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ProgressBar"]
+position = Vector2(700, -206)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ti5c5")
+animation = &"locked"
+
+[node name="Label" type="Label" parent="ProgressBar"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 95.5
+offset_right = 77.0
+offset_bottom = 178.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "+15%"
+label_settings = SubResource("LabelSettings_1f2d6")
+horizontal_alignment = 1

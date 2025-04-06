@@ -5,6 +5,7 @@ var questionsCorrect = 0
 var wordsInQuestions = []
 var totalQuestions = 0
 var correctButton : int
+var xpEarned : int
 
 @onready var endContainer = $ResultsBlud
 @onready var percentScore = $ResultsBlud/Panel/perccentScore
@@ -18,12 +19,15 @@ var correctButton : int
 @onready var buttonTwo = $"Game/Option 2"
 @onready var buttonThree = $"Game/Option 3"
 @onready var buttonFour = $"Game/Option 4"
+@onready var xpThing = $CanvasLayer/xpSigma
+@onready var timer = $Timer
 
 func _ready() -> void:
 	endContainer.visible = false
 	theGame.visible = true
 	chooseWords()
 	scoreText.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
+	xpThing.visible = false
 
 func _on_option_1_pressed() -> void:
 	if correctButton == 0:
@@ -80,12 +84,15 @@ func chooseWords():
 	if quizDifficulty == 1:
 		wordsInQuestions = shuffled_keys.slice(0,3)
 		totalQuestions = 3
+		#xpEarned = 30
 	elif quizDifficulty == 2:
 		wordsInQuestions = shuffled_keys.slice(0,10)
 		totalQuestions = 10
+		#xpEarned = 50
 	elif quizDifficulty == 3:
 		wordsInQuestions = shuffled_keys.slice(0,20)
 		totalQuestions = 20
+		#xpEarned = 100
 	
 	var correctAnswer = wordsInQuestions[questionNum]
 
@@ -108,6 +115,7 @@ func chooseWords():
 	questionText.set_text("What is the meaning of '" + correctAnswer + "'?")
 
 func setUpEnd():
+	#timer.start()
 	theGame.visible = false
 	var percent = float(questionsCorrect) / totalQuestions * 100
 	percentScore.set_text(str(round(percent)) + "%")
