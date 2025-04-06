@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://gkjakdl6uqym"]
+[gd_scene load_steps=4 format=3 uid="uid://duocs7ioawajc"]
 
 [ext_resource type="Script" uid="uid://cy25lhijhedel" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_6wm04"]

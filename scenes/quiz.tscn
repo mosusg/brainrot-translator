@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bitiori8cp8q5"]
+
+[ext_resource type="Script" uid="uid://ckvpvsfppuvl7" path="res://scripts/brainrotWords.gd" id="1_2fkxq"]
+[ext_resource type="Script" uid="uid://crdlcarbccmmv" path="res://scenes/quiz.gd" id="1_3bubg"]
+[ext_resource type="Shader" path="res://scenes/better shader.gdshader" id="1_jng0p"]
+[ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="2_2fkxq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3bubg"]
+shader = ExtResource("1_jng0p")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/direction_change_speed = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_2fkxq"]
+font_size = 100
+
+[node name="Quiz" type="Node2D"]
+script = ExtResource("1_3bubg")
+
+[node name="infoLord" type="Node2D" parent="."]
+script = ExtResource("1_2fkxq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.156863, 0.686275, 0.690196, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3bubg")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_2fkxq")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+modulate = Color(1, 0, 0, 0.556863)
+self_modulate = Color(1, 1, 1, 0.705882)
+custom_minimum_size = Vector2(1920, 300)
+offset_right = 1920.0
+offset_bottom = 300.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="questionBlud" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1900.0
+offset_bottom = 282.0
+text = "What is the meaning of \"Rizz\"?"
+label_settings = SubResource("LabelSettings_2fkxq")
+vertical_alignment = 1

@@ -45,7 +45,7 @@ theme_override_styles/focus = ExtResource("2_dmsei")
 theme_override_styles/hover = ExtResource("2_dmsei")
 theme_override_styles/pressed = ExtResource("3_cl6f3")
 theme_override_styles/normal = ExtResource("2_dmsei")
-text = "1"
+text = "Quiz"
 
 [node name="Option 2" type="Button" parent="CenterContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(920, 100)
@@ -62,7 +62,7 @@ theme_override_styles/focus = ExtResource("2_dmsei")
 theme_override_styles/hover = ExtResource("2_dmsei")
 theme_override_styles/pressed = ExtResource("3_cl6f3")
 theme_override_styles/normal = ExtResource("2_dmsei")
-text = "1"
+text = "Flashcards"
 
 [node name="Option 3" type="Button" parent="CenterContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(920, 100)
