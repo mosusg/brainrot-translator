@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://4wv5kf7jysck"]
+[gd_scene load_steps=9 format=3 uid="uid://4wv5kf7jysck"]
 
 [ext_resource type="Script" uid="uid://de8udnlghhcpx" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Shader" uid="uid://4shutw5u745f" path="res://scripts/better shader.gdshader" id="2_4ytvr"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="3_g3eks"]
 [ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://ijrmxyu1paea" path="res://assets/gear.png" id="6_v86rl"]
+[ext_resource type="Texture2D" uid="uid://dy2ftx6iotj0s" path="res://assets/rizzpedia2.png" id="7_v86rl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
 shader = ExtResource("2_4ytvr")
@@ -39,13 +41,13 @@ texture = ExtResource("3_g3eks")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_top = 100.0
+offset_top = 2.0
 offset_right = 1920.0
-offset_bottom = 935.0
+offset_bottom = 1082.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 500
 
 [node name="Option 1" type="Button" parent="CenterContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(920, 100)
@@ -64,23 +66,6 @@ theme_override_styles/pressed = ExtResource("3_mhnvy")
 theme_override_styles/normal = ExtResource("2_con2f")
 text = "Start"
 
-[node name="Option 2" type="Button" parent="CenterContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(920, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
-theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_font_sizes/font_size = 100
-theme_override_styles/focus = ExtResource("2_con2f")
-theme_override_styles/hover = ExtResource("2_con2f")
-theme_override_styles/pressed = ExtResource("3_mhnvy")
-theme_override_styles/normal = ExtResource("2_con2f")
-text = "Settings"
-
 [node name="Option 3" type="Button" parent="CenterContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(920, 100)
 layout_mode = 2
@@ -98,6 +83,32 @@ theme_override_styles/pressed = ExtResource("3_mhnvy")
 theme_override_styles/normal = ExtResource("2_con2f")
 text = "Quit"
 
+[node name="Option 2" type="Button" parent="."]
+custom_minimum_size = Vector2(10, 100)
+layout_mode = 2
+offset_left = 188.0
+offset_top = 792.0
+offset_right = 798.0
+offset_bottom = 1452.0
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("2_con2f")
+theme_override_styles/hover = ExtResource("2_con2f")
+theme_override_styles/pressed = ExtResource("3_mhnvy")
+theme_override_styles/normal = ExtResource("2_con2f")
+icon = ExtResource("6_v86rl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("7_v86rl")
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 3" to="." method="_on_option_3_pressed"]
+[connection signal="pressed" from="Option 2" to="." method="_on_option_2_pressed"]

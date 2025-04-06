@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bitiori8cp8q5"]
+[gd_scene load_steps=13 format=3 uid="uid://bitiori8cp8q5"]
 
 [ext_resource type="Script" uid="uid://ckvpvsfppuvl7" path="res://scripts/brainrotWords.gd" id="1_2fkxq"]
 [ext_resource type="Script" uid="uid://crdlcarbccmmv" path="res://scripts/quiz.gd" id="1_3bubg"]
@@ -14,6 +14,23 @@ shader_parameter/direction_change_speed = 0.5
 
 [sub_resource type="LabelSettings" id="LabelSettings_2fkxq"]
 font_size = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m81w7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_xq7j8"]
+font_size = 75
+font_color = Color(0.933333, 0.898039, 0.898039, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bn6h1"]
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_t0h63"]
+font_size = 50
 
 [node name="Quiz" type="Node2D"]
 script = ExtResource("1_3bubg")
@@ -35,6 +52,7 @@ offset_bottom = 1080.0
 texture = ExtResource("2_2fkxq")
 
 [node name="Game" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1024.5
@@ -169,7 +187,124 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="ResultsBlud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="thingy" type="Panel" parent="ResultsBlud"]
+self_modulate = Color(1, 1, 1, 0.278431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 590.0
+offset_top = 380.0
+offset_right = 1290.0
+offset_bottom = 728.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.5)
+pivot_offset = Vector2(350, 174)
+theme_override_styles/panel = SubResource("StyleBoxFlat_m81w7")
+
+[node name="wRizz" type="Label" parent="ResultsBlud/thingy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -214.0
+offset_right = 341.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 2)
+text = "W Rizz!"
+label_settings = SubResource("LabelSettings_xq7j8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="ResultsBlud"]
+self_modulate = Color(1, 1, 1, 0.278431)
+layout_mode = 1
+offset_left = 610.0
+offset_top = 135.0
+offset_right = 1310.0
+offset_bottom = 483.0
+pivot_offset = Vector2(350, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_m81w7")
+
+[node name="perccentScore" type="Label" parent="ResultsBlud/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -51.5
+offset_right = 109.5
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "75%"
+label_settings = SubResource("LabelSettings_bn6h1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fraction" type="Label" parent="ResultsBlud/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = 76.0
+offset_right = 109.5
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "75%"
+label_settings = SubResource("LabelSettings_t0h63")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="ResultsBlud"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 819.5
+offset_top = 672.0
+offset_right = 1060.5
+offset_bottom = 829.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("5_m81w7")
+theme_override_styles/hover = ExtResource("5_m81w7")
+theme_override_styles/pressed = ExtResource("6_xq7j8")
+theme_override_styles/normal = ExtResource("5_m81w7")
+text = "Back"
+
 [connection signal="pressed" from="Game/Option 4" to="." method="_on_option_4_pressed"]
 [connection signal="pressed" from="Game/Option 3" to="." method="_on_option_3_pressed"]
 [connection signal="pressed" from="Game/Option 2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="Game/Option 1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="ResultsBlud/Back" to="." method="_on_back_pressed"]

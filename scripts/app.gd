@@ -3,7 +3,7 @@ extends Control
 @onready var decisionButtons = $"Control/VBoxContainer2"
 @onready var difficultyButtons = $Sigmabox
 @onready var backButton = $Back
-@onready var infoLord = $infoLord
+#@onready var infoLord = $infoLord
 
 func _ready() -> void:
 	decisionButtons.visible = true
@@ -27,13 +27,13 @@ func _on_back_pressed() -> void:
 		difficultyButtons.visible = false
 
 func _on_easy_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/quiz.tscn")
 	infoLord.globalQuizDif = 1
+	get_tree().change_scene_to_file("res://scenes/quiz.tscn")
 
 func _on_medium_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/quiz.tscn")
 	infoLord.globalQuizDif = 2
+	get_tree().change_scene_to_file("res://scenes/quiz.tscn")
 
 func _on_hard_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/quiz.tscn")
 	infoLord.globalQuizDif = 3
+	get_tree().change_scene_to_file("res://scenes/quiz.tscn")

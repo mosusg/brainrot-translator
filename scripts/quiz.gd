@@ -1,53 +1,79 @@
 extends Node2D
 
-var questionNum = 0 
+var questionNum = 1
 var questionsCorrect = 0
 var wordsInQuestions = []
 var totalQuestions = 0
 var correctButton : int
 
+@onready var endContainer = $ResultsBlud
+@onready var percentScore = $ResultsBlud/Panel/perccentScore
+@onready var fractionScore = $ResultsBlud/Panel/Fraction
+@onready var message = $ResultsBlud/thingy/wRizz
 @onready var questionText = $Game/questionBlud
 @onready var scoreText = $Game/scoreBlud
-@onready var infoLord = $infoLord
+#@onready var infoLord = $infoLord
+@onready var theGame = $Game
 @onready var buttonOne = $"Game/Option 1"
 @onready var buttonTwo = $"Game/Option 2"
 @onready var buttonThree = $"Game/Option 3"
 @onready var buttonFour = $"Game/Option 4"
 
 func _ready() -> void:
+	endContainer.visible = false
+	theGame.visible = true
 	chooseWords()
 	scoreText.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
 
 func _on_option_1_pressed() -> void:
 	if correctButton == 0:
-		questionsCorrect += 1
-	chooseWords()
+		setUpEnd()
+	if questionNum == totalQuestions:
+		theGame.visible = false
+	else:
+		chooseWords()
+		theGame.visible = true
 	scoreText.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
-	print(questionsCorrect)
+	questionNum += 1
 
 func _on_option_2_pressed() -> void:
 	if correctButton == 1:
 		questionsCorrect += 1
-	chooseWords()
+	if questionNum == totalQuestions:
+		setUpEnd()
+	else:
+		chooseWords()
+		theGame.visible = true
 	scoreText.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
-	print(questionsCorrect)
+	questionNum += 1
 
 func _on_option_3_pressed() -> void:
 	if correctButton == 2:
 		questionsCorrect += 1
-	chooseWords()
+	if questionNum == totalQuestions:
+		setUpEnd()
+	else:
+		chooseWords()
+		theGame.visible = true
+
 	scoreText.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
-	print(questionsCorrect)
+	questionNum += 1
 
 func _on_option_4_pressed() -> void:
 	if correctButton == 3:
 		questionsCorrect += 1
-	chooseWords()
+	if questionNum == totalQuestions:
+		setUpEnd()
+	else:
+		chooseWords()
+		theGame.visible = true
+		
 	scoreText.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
-	print(questionsCorrect) 
+	questionNum += 1
 	
 func chooseWords():
 	var quizDifficulty = infoLord.globalQuizDif
+	print(quizDifficulty)
 	var shuffled_keys = infoLord.words.keys()
 	shuffled_keys.shuffle()
 	
@@ -80,3 +106,22 @@ func chooseWords():
 
 	# Update the question text
 	questionText.set_text("What is the meaning of '" + correctAnswer + "'?")
+
+func setUpEnd():
+	theGame.visible = false
+	var percent = float(questionsCorrect) / totalQuestions * 100
+	percentScore.set_text(str(round(percent)) + "%")
+	fractionScore.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
+	
+	if questionsCorrect / totalQuestions <= 0.33:
+		message.set_text("L Rizz!")
+	elif questionsCorrect / totalQuestions <= 0.7:
+		message.set_text("Mid Rizz!")
+	elif questionsCorrect / totalQuestions <= 0.9:
+		message.set_text("W Rizz!")
+		
+	
+	endContainer.visible = true
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/app.tscn")
