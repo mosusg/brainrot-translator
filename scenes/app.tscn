@@ -97,6 +97,7 @@ theme_override_styles/normal = ExtResource("2_dmsei")
 text = "Main Menu"
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 18.0
 offset_top = 15.0
 offset_right = 259.0
