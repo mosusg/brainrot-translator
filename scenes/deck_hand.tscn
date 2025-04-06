@@ -43,7 +43,7 @@ theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
 theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = ExtResource("5_npc56")
 theme_override_styles/hover = ExtResource("5_npc56")
 theme_override_styles/pressed = ExtResource("6_lq05f")
@@ -61,7 +61,7 @@ theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
 theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = ExtResource("5_npc56")
 theme_override_styles/hover = ExtResource("5_npc56")
 theme_override_styles/pressed = ExtResource("6_lq05f")
@@ -79,14 +79,14 @@ theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
 theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = ExtResource("5_npc56")
 theme_override_styles/hover = ExtResource("5_npc56")
 theme_override_styles/pressed = ExtResource("6_lq05f")
 theme_override_styles/normal = ExtResource("5_npc56")
 text = "Aura"
 
-[node name="Exit" type="Button" parent="CanvasLayer"]
+[node name="Back" type="Button" parent="CanvasLayer"]
 offset_left = 1613.0
 offset_right = 1913.0
 offset_bottom = 157.0
@@ -97,14 +97,14 @@ theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
 theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = ExtResource("5_npc56")
 theme_override_styles/hover = ExtResource("5_npc56")
 theme_override_styles/pressed = ExtResource("6_lq05f")
 theme_override_styles/normal = ExtResource("5_npc56")
-text = "Exit"
+text = "Back"
 
 [connection signal="pressed" from="CanvasLayer/Rizz" to="." method="_on_rizz_pressed"]
 [connection signal="pressed" from="CanvasLayer/Mog" to="." method="_on_mog_pressed"]
 [connection signal="pressed" from="CanvasLayer/Aura" to="." method="_on_aura_pressed"]
-[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_exit_pressed"]

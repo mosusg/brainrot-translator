@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://j173tu85hwao"]
+[gd_scene load_steps=6 format=3 uid="uid://j173tu85hwao"]
 
 [ext_resource type="Script" uid="uid://cy25lhijhedel" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_6wm04"]
 [ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="2_r6d6q"]
 [ext_resource type="Texture2D" uid="uid://dejloa5cgcuqf" path="res://scenes/images.jpg" id="4_f4mfi"]
+[ext_resource type="Texture2D" uid="uid://dcsy1nhhnspj7" path="res://assets/kaiser.jpg" id="5_es4n0"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -80,7 +81,29 @@ theme_override_styles/focus = ExtResource("2_6wm04")
 theme_override_styles/hover = ExtResource("2_6wm04")
 theme_override_styles/pressed = ExtResource("2_r6d6q")
 theme_override_styles/normal = ExtResource("2_6wm04")
-text = "Main Menu"
+text = "Rizzer"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Back" type="Button" parent="."]
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 259.0
+offset_bottom = 172.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.458481, 0.471985, 0.398646, 1)
+theme_override_colors/font_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.215686, 0.223529, 0.180392, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("2_6wm04")
+theme_override_styles/hover = ExtResource("2_6wm04")
+theme_override_styles/pressed = ExtResource("2_r6d6q")
+theme_override_styles/normal = ExtResource("2_6wm04")
+text = "Back"
 
 [node name="no" type="Sprite2D" parent="."]
 visible = false
@@ -88,10 +111,13 @@ position = Vector2(960, 542.5)
 scale = Vector2(11.2941, 3.63176)
 texture = ExtResource("4_f4mfi")
 
-[node name="Timer" type="Timer" parent="no"]
-one_shot = true
+[node name="no2" type="Sprite2D" parent="."]
+position = Vector2(18, 926)
+scale = Vector2(36.729, 11.812)
+texture = ExtResource("5_es4n0")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer2/Option 3" to="." method="_on_option_3_pressed"]
-[connection signal="timeout" from="no/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
