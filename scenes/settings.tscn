@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://j173tu85hwao"]
+[gd_scene load_steps=6 format=3 uid="uid://c4f6hwfoh4cqo"]
 
 [ext_resource type="Script" uid="uid://cy25lhijhedel" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_6wm04"]
@@ -87,6 +87,7 @@ text = "Rizzer"
 one_shot = true
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 18.0
 offset_top = 15.0
 offset_right = 259.0

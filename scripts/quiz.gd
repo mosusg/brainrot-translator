@@ -27,9 +27,9 @@ func _ready() -> void:
 
 func _on_option_1_pressed() -> void:
 	if correctButton == 0:
-		setUpEnd()
+		questionsCorrect += 1
 	if questionNum == totalQuestions:
-		theGame.visible = false
+		setUpEnd()
 	else:
 		chooseWords()
 		theGame.visible = true
@@ -67,7 +67,7 @@ func _on_option_4_pressed() -> void:
 	else:
 		chooseWords()
 		theGame.visible = true
-		
+
 	scoreText.set_text(str(questionsCorrect) + "/" + str(totalQuestions))
 	questionNum += 1
 	

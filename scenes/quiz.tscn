@@ -52,7 +52,6 @@ offset_bottom = 1080.0
 texture = ExtResource("2_2fkxq")
 
 [node name="Game" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1024.5
@@ -62,6 +61,7 @@ offset_bottom = 770.75
 
 [node name="Option 4" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
+layout_mode = 0
 offset_left = -974.5
 offset_top = -380.75
 offset_right = -84.5
@@ -86,6 +86,7 @@ clip_text = true
 
 [node name="Option 3" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
+layout_mode = 0
 offset_left = -974.5
 offset_top = -15.75
 offset_right = -84.5
@@ -109,6 +110,7 @@ autowrap_mode = 3
 
 [node name="Option 2" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
+layout_mode = 0
 offset_left = -44.5
 offset_top = -380.75
 offset_right = 845.5
@@ -132,6 +134,7 @@ autowrap_mode = 3
 
 [node name="Option 1" type="Button" parent="Game"]
 custom_minimum_size = Vector2(890, 100)
+layout_mode = 0
 offset_left = -44.5
 offset_top = -15.75
 offset_right = 845.5
@@ -157,6 +160,7 @@ autowrap_mode = 3
 modulate = Color(1, 0, 0, 0.556863)
 self_modulate = Color(1, 1, 1, 0.705882)
 custom_minimum_size = Vector2(1920, 300)
+layout_mode = 0
 offset_left = -1024.5
 offset_top = -730.75
 offset_right = 895.5
@@ -166,6 +170,7 @@ size_flags_vertical = 0
 color = Color(0, 0, 0, 1)
 
 [node name="questionBlud" type="Label" parent="Game"]
+layout_mode = 0
 offset_left = -1004.5
 offset_top = -710.75
 offset_right = 675.5
@@ -176,6 +181,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="scoreBlud" type="Label" parent="Game"]
+layout_mode = 0
 offset_left = 664.5
 offset_top = -533.75
 offset_right = 972.5
@@ -188,6 +194,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ResultsBlud" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

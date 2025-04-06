@@ -1,5 +1,6 @@
 extends Node
 
+var emojiState = "mid"
 var globalQuizDif = 1
 var easyQuizHS = 0
 var mediumQuizHS = 0
@@ -453,6 +454,19 @@ var words = {
 		"PART_OF_SPEECH" : "",
 		"RELEVANCE" : 9, # Scale of 1-10 of how relevant the word is
 		"Example" : ""
-	}
-	
+	},
+	"Spring Bardiro Crocodilo" : {
+		"DEFINITION" : "A meme of a croccodile who is flying a plane",
+		"SYNONYM" : "None",
+		"PART_OF_SPEECH" : "",
+		"RELEVANCE" : 9, # Scale of 1-10 of how relevant the word is
+		"Example" : ""
+	},
+	"Washed" : {
+		"DEFINITION" : "Used to describe someone who is past their prime, washed up",
+		"SYNONYM" : "None",
+		"PART_OF_SPEECH" : "",
+		"RELEVANCE" : 9, # Scale of 1-10 of how relevant the word is
+		"Example" : ""
+	},	
 }
