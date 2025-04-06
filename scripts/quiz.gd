@@ -6,13 +6,13 @@ var wordsInQuestions = []
 var totalQuestions = 0
 var correctButton : int
 
-@onready var questionText = $questionBlud
-@onready var scoreText = $scoreBlud
+@onready var questionText = $Game/questionBlud
+@onready var scoreText = $Game/scoreBlud
 @onready var infoLord = $infoLord
-@onready var buttonOne = $"Option 1"
-@onready var buttonTwo = $"Option 2"
-@onready var buttonThree = $"Option 3"
-@onready var buttonFour = $"Option 4"
+@onready var buttonOne = $"Game/Option 1"
+@onready var buttonTwo = $"Game/Option 2"
+@onready var buttonThree = $"Game/Option 3"
+@onready var buttonFour = $"Game/Option 4"
 
 func _ready() -> void:
 	chooseWords()
