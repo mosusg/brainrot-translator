@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://bes4hhe47cbc8"]
+[gd_scene load_steps=4 format=3 uid="uid://bes4hhe47cbc8"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://deoc0jkea37e6" path="res://assets/card_base.png" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://b1rltmymv22ba" path="res://assets/mana_slot.png" id="2_sugp2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font_size = 10
+
+[node name="Card" type="Node2D"]
+
+[node name="CardBase" type="Sprite2D" parent="."]
+texture = ExtResource("1_0wfyh")
+
+[node name="CostDisp" type="Node2D" parent="."]
+position = Vector2(34, -56)
+
+[node name="Mana" type="Sprite2D" parent="CostDisp"]
+texture = ExtResource("2_sugp2")
+
+[node name="Label" type="Label" parent="CostDisp"]
+offset_left = -3.0
+offset_top = -7.0
+offset_right = 37.0
+offset_bottom = 16.0
+text = "9"
+label_settings = SubResource("LabelSettings_jyhfs")
+
+[node name="CardName" type="Node2D" parent="."]
+
+[node name="Text" type="Label" parent="CardName"]
+offset_right = 40.0
+offset_bottom = 23.0
