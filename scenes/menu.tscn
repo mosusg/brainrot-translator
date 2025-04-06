@@ -1,59 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://4wv5kf7jysck"]
 
 [ext_resource type="Script" uid="uid://de8udnlghhcpx" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Shader" uid="uid://4shutw5u745f" path="res://scripts/better shader.gdshader" id="2_4ytvr"]
 [ext_resource type="StyleBox" uid="uid://bid4da0a1s6wl" path="res://tres/Button style up.tres" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://12flds17r3h2" path="res://assets/betterbulb.png" id="3_g3eks"]
 [ext_resource type="StyleBox" uid="uid://b62gyhl44h0ks" path="res://tres/Button style.tres" id="3_mhnvy"]
 
-[sub_resource type="Shader" id="Shader_mhnvy"]
-code = "shader_type canvas_item;
-
-
-
-uniform float scroll_speed = 0.05;
-uniform float direction_change_speed = 0.5;
-
-vec2 get_direction(float t) {
-    // Generate a smooth pseudo-random angle
-    float angle = (
-        sin(t * direction_change_speed) +
-        sin(t * direction_change_speed * 1.37 + 2.0) +
-        sin(t * direction_change_speed * 0.73 + 4.5)
-    ) * 1.0;
-
-    return vec2(cos(angle), sin(angle));
-}
-
-vec2 get_position(float t) {
-    // Integrate the direction over time using small time steps
-    // This simulates movement along a smooth random path
-
-    float dt = 0.1; // Step size for integration
-    int steps = int(t / dt);
-    float remainder = mod(t, dt);
-
-    vec2 pos = vec2(0.0);
-    for (int i = 0; i < steps; i++) {
-        float sample_t = float(i) * dt;
-        vec2 dir = get_direction(sample_t);
-        pos += dir * scroll_speed * dt;
-    }
-
-    // Add the final fractional step
-    vec2 final_dir = get_direction(t);
-    pos += final_dir * scroll_speed * remainder;
-
-    return pos;
-}
-
-void fragment() {
-    vec2 offset = get_position(TIME);
-    vec4 tex = texture(TEXTURE, UV + offset);
-    COLOR = tex;
-}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
-shader = SubResource("Shader_mhnvy")
+shader = ExtResource("2_4ytvr")
 shader_parameter/scroll_speed = 0.05
 shader_parameter/direction_change_speed = 0.5
 
@@ -62,8 +16,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 768.0
-offset_bottom = 432.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
