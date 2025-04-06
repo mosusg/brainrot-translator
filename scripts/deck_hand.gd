@@ -27,3 +27,7 @@ func _on_aura_pressed() -> void:
 	var aura_card = aura_card_scene.instantiate()
 	hand.add_card(aura_card)
 	print("aura card added")
+
+
+func _on_exit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/app.tscn")

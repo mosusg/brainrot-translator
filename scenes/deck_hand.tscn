@@ -107,3 +107,4 @@ text = "Exit"
 [connection signal="pressed" from="CanvasLayer/Rizz" to="." method="_on_rizz_pressed"]
 [connection signal="pressed" from="CanvasLayer/Mog" to="." method="_on_mog_pressed"]
 [connection signal="pressed" from="CanvasLayer/Aura" to="." method="_on_aura_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

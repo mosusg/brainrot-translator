@@ -169,7 +169,7 @@ theme_override_styles/focus = ExtResource("2_dmsei")
 theme_override_styles/hover = ExtResource("2_dmsei")
 theme_override_styles/pressed = ExtResource("3_cl6f3")
 theme_override_styles/normal = ExtResource("2_dmsei")
-text = "Main Menu"
+text = "RizzCards(demo)"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
