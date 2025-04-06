@@ -54,6 +54,12 @@ func chooseWords():
 	if quizDifficulty == 1:
 		wordsInQuestions = shuffled_keys.slice(0,3)
 		totalQuestions = 3
+	elif quizDifficulty == 2:
+		wordsInQuestions = shuffled_keys.slice(0,10)
+		totalQuestions = 10
+	elif quizDifficulty == 3:
+		wordsInQuestions = shuffled_keys.slice(0,20)
+		totalQuestions = 20
 	
 	var correctAnswer = wordsInQuestions[questionNum]
 
@@ -74,7 +80,3 @@ func chooseWords():
 
 	# Update the question text
 	questionText.set_text("What is the meaning of '" + correctAnswer + "'?")
-
-
-func _on_back_pressed():
-		get_tree().change_scene_to_file("res://scenes/app.tscn")
