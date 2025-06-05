@@ -1,41 +1,20 @@
 shader_type canvas_item;
 
-
-
-uniform float scroll_speed = 0.05;
-uniform float direction_change_speed = 0.5;
-
-vec2 get_direction(float t) {
-    // Generate a smooth pseudo-random angle
-    float angle = (
-        sin(t * direction_change_speed) +
-        sin(t * direction_change_speed * 1.37 + 2.0) +
-        sin(t * direction_change_speed * 0.73 + 4.5)
-    ) * 1.0;
-
-    return vec2(cos(angle), sin(angle));
-}
+uniform float scroll_speed = 5;
+uniform float direction_change_speed = 0.1;
 
 vec2 get_position(float t) {
-    // Integrate the direction over time using small time steps
-    // This simulates movement along a smooth random path
+    // Combine sine waves to create a pseudo-random smooth offset path
+    float x = sin(t * direction_change_speed) +
+              sin(t * direction_change_speed * 0.73 + 1.5) +
+              sin(t * direction_change_speed * 1.41 + 3.7);
 
-    float dt = 0.1; // Step size for integration
-    int steps = int(t / dt);
-    float remainder = mod(t, dt);
+    float y = sin(t * direction_change_speed * 1.11 + 0.5) +
+              sin(t * direction_change_speed * 0.67 + 2.3) +
+              sin(t * direction_change_speed * 1.21 + 4.0);
 
-    vec2 pos = vec2(0.0);
-    for (int i = 0; i < steps; i++) {
-        float sample_t = float(i) * dt;
-        vec2 dir = get_direction(sample_t);
-        pos += dir * scroll_speed * dt;
-    }
-
-    // Add the final fractional step
-    vec2 final_dir = get_direction(t);
-    pos += final_dir * scroll_speed * remainder;
-
-    return pos;
+    vec2 offset = vec2(x, y) * scroll_speed * 0.33; // scale to match feel
+    return offset;
 }
 
 void fragment() {
